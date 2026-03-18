@@ -70,6 +70,7 @@ const ProductOffer = () => {
             <div className="my-6">
               <span className="line-through text-kinematic-warm/40 text-2xl mr-4">99€</span>
               <span className="text-6xl font-serif text-kinematic-terracotta font-bold">69€</span>
+              <span className="text-sm font-sans text-kinematic-warm/70 ml-2">+ envío</span>
               <span className="block text-sm text-kinematic-warm/60 mt-2 uppercase tracking-widest">Precio especial hasta fin de existencias</span>
             </div>
             
@@ -88,9 +89,21 @@ const ProductOffer = () => {
               </div>
             </div>
 
-            <a href="#" className="btn-primary w-full sm:w-auto mt-4 text-lg px-12 py-5 shadow-kinematic-terracotta/20 shadow-xl">
-              Pídelo ahora y recíbelo ya
-            </a>
+            <div className="mt-4 flex justify-center w-full">
+              {deviceVersion === 'ios' ? (
+                <stripe-buy-button
+                  key="stripe-ios"
+                  buy-button-id="buy_btn_1TCAZeDpKdHDrcOgeXQFNOss"
+                  publishable-key="pk_live_51TC8i8DpKdHDrcOgXJKCa4xn5XQOWe2p0w3oDayBCq4Kd4a7KCx1PJkjEqRs9i2DRLf6NwO9LHQ2V05ngDJJSmkb00inStcyz0"
+                ></stripe-buy-button>
+              ) : (
+                <stripe-buy-button
+                  key="stripe-android"
+                  buy-button-id="buy_btn_1TCB9nDpKdHDrcOgdzqIVHAq"
+                  publishable-key="pk_live_51TC8i8DpKdHDrcOgXJKCa4xn5XQOWe2p0w3oDayBCq4Kd4a7KCx1PJkjEqRs9i2DRLf6NwO9LHQ2V05ngDJJSmkb00inStcyz0"
+                ></stripe-buy-button>
+              )}
+            </div>
             <p className="text-xs text-kinematic-warm/50 mt-6 mt-4 flex items-center justify-center gap-2">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Stock disponible para envío inmediato
             </p>

@@ -8,7 +8,7 @@ const Footer = () => {
           <h2 className="text-3xl font-bold font-sans mb-4">No dejes que sea demasiado tarde</h2>
           <p className="text-kinematic-warm/60 mb-8 max-w-md mx-auto">Tu bici segura hoy. El proceso de compra dura 30 segundos y lo enviamos mañana.</p>
           <a href="#comprar" className="btn-primary inline-flex text-lg px-10">
-            Tu bici segura por 69€
+            Tu bici segura por 69€ <span className="text-sm opacity-80 ml-1 font-normal">+ envío</span>
           </a>
         </div>
         

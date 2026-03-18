@@ -30,7 +30,7 @@ const Hero = () => {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto fade-in-up" style={{animationDelay: '0.4s'}}>
           <a href="#comprar" className="btn-primary">
-            Pídelo por sólo 69€
+            Pídelo por sólo 69€ <span className="text-sm opacity-80 ml-1 font-normal">+ envío</span>
           </a>
           <a href="#como-funciona" className="btn-outline">
             Ver cómo funciona

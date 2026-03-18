@@ -18,9 +18,9 @@ const Footer = () => {
             <span>&copy; {new Date().getFullYear()} Todos los derechos reservados</span>
           </div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-kinematic-terracotta transition-colors">Aviso Legal</a>
-            <a href="#" className="hover:text-kinematic-terracotta transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-kinematic-terracotta transition-colors">Contacto</a>
+            <a href="/aviso-legal.html" className="hover:text-kinematic-terracotta transition-colors">Aviso Legal</a>
+            <a href="/privacidad.html" className="hover:text-kinematic-terracotta transition-colors">Privacidad</a>
+            <a href="mailto:bikesafekit@gmail.com" className="hover:text-kinematic-terracotta transition-colors">Contacto</a>
           </div>
         </div>
       </div>

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-kinematic-warm: #F7F3EE;
+  --color-kinematic-neutral: #2C2A29;
+  --color-kinematic-terracotta: #D1604A;
+  --color-kinematic-terracottaHover: #B94B37;
+  
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  
+  --shadow-soft: 0 4px 40px rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-kinematic-warm);
+    color: var(--color-kinematic-neutral);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Efecto granulado sutil (noise) para "materialidad" */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    letter-spacing: -0.015em;
+  }
+
+  .serif-accent {
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+}
+
+@layer utilities {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-kinematic-terracotta text-white font-medium rounded-sm transition-all duration-300 ease-out hover:bg-kinematic-terracottaHover shadow-md hover:-translate-y-[2px] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-kinematic-terracotta focus:ring-offset-2 focus:ring-offset-kinematic-warm;
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 border border-kinematic-neutral text-kinematic-neutral font-medium rounded-sm transition-all duration-300 ease-out hover:bg-kinematic-neutral hover:text-white shadow-sm hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-kinematic-neutral focus:ring-offset-2 focus:ring-offset-kinematic-warm;
+  }
+
+  /* Animaciones suaves al scroll */
+  .fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Ocultar barra de scroll o suavizar */
+html {
+  scroll-behavior: smooth;
+}

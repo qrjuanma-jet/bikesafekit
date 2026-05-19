@@ -69,8 +69,8 @@ const ProductOffer = () => {
             <h3 className="text-2xl font-bold mb-2">Tu bici segura hoy</h3>
             <div className="my-6">
               <span className="line-through text-kinematic-warm/40 text-2xl mr-4">99€</span>
-              <span className="text-6xl font-serif text-kinematic-terracotta font-bold">69€</span>
-              <span className="text-sm font-sans text-kinematic-warm/70 ml-2">+ envío</span>
+              <span className="text-6xl font-serif text-kinematic-terracotta font-bold">49€</span>
+              <span className="text-sm font-sans text-kinematic-warm/70 ml-2">(envío incluido)</span>
               <span className="block text-sm text-kinematic-warm/60 mt-2 uppercase tracking-widest">Precio especial hasta fin de existencias</span>
             </div>
             
@@ -91,17 +91,21 @@ const ProductOffer = () => {
 
             <div className="mt-4 flex justify-center w-full">
               {deviceVersion === 'ios' ? (
-                <stripe-buy-button
+                <a
                   key="stripe-ios"
-                  buy-button-id="buy_btn_1TCAZeDpKdHDrcOgeXQFNOss"
-                  publishable-key="pk_live_51TC8i8DpKdHDrcOgXJKCa4xn5XQOWe2p0w3oDayBCq4Kd4a7KCx1PJkjEqRs9i2DRLf6NwO9LHQ2V05ngDJJSmkb00inStcyz0"
-                ></stripe-buy-button>
+                  href="https://buy.stripe.com/6oUeVd2bA6SrcT0cr2e7m03"
+                  className="btn-primary w-full md:w-auto"
+                >
+                  Comprar Kit iOS
+                </a>
               ) : (
-                <stripe-buy-button
+                <a
                   key="stripe-android"
-                  buy-button-id="buy_btn_1TCB9nDpKdHDrcOgdzqIVHAq"
-                  publishable-key="pk_live_51TC8i8DpKdHDrcOgXJKCa4xn5XQOWe2p0w3oDayBCq4Kd4a7KCx1PJkjEqRs9i2DRLf6NwO9LHQ2V05ngDJJSmkb00inStcyz0"
-                ></stripe-buy-button>
+                  href="https://buy.stripe.com/7sY6oHbMaccL06e3Uwe7m02"
+                  className="btn-primary w-full md:w-auto"
+                >
+                  Comprar Kit Android
+                </a>
               )}
             </div>
             <p className="text-xs text-kinematic-warm/50 mt-6 mt-4 flex items-center justify-center gap-2">
